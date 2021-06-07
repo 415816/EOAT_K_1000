@@ -1,0 +1,23 @@
+/* div div{
+    border: 1px solid black;
+    height: 30px;
+    width: 70px;
+    margin: 5px;
+    text-align: center;
+    vertical-align: middle;
+    padding-top: 5px;
+}
+ */
+.fl{
+    display: flex;
+    justify-content: center;
+}
+
+.cont{
+    display: flex;
+    justify-content: center;
+}
+
+.but{
+    margin: 5px 30px 5px 30px;
+}
