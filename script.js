@@ -687,7 +687,7 @@ function defferentSeries2(Sc1, Sc3) {
     return [Tc1, Tc3, Tc2, S2];
 }
 
-// функция проверки условий
+// функция проверки условий на максимальную длину, на соответствие длинам тормозных путей
 function check(S2, S1) {
     if (S2 != 17125 && (S2 - S1 > 2200) && S5 != 0) {
         console.log(`${S2} - ${S1} = ${(S2 - S1)} > 2200`);
@@ -874,35 +874,18 @@ function calcBU() {
             S6 = check(S7, S6)[1];
             S5 = check(S6, S5)[1];
             S4 = check(S5, S4)[1];
-            console.log('S8 = ' + S8);
-            console.log('S7 = ' + S7);
-            console.log('S6 = ' + S6);
-            console.log('S5 = ' + S5);
-            console.log('S4 = ' + S4);
-            console.log('S3 = ' + S3);
-            console.log('S2 = ' + S2);
         }
-        if (S7 != check(S8, S7)[1]) {
-            console.log(S7);
-            console.log(check(S8, S7)[1]);
-            S7 = check(S8, S7)[1];
-            console.log('S7 = ' + S7);
-        }
-        if (S6 != check(S7, S6)[1]) {
-            S6 = check(S7, S6)[1];
-            console.log('S6 = ' + S6);
-        }
-        if (S5 != check(S6, S5)[1]) {
-            S5 = check(S6, S5)[1];
-            console.log('S5 = ' + S5);
-        }
-
-        if (S4 != check(S5, S4)[1]) {
-            S4 = check(S5, S4)[1];
-            console.log('S4 = ' + S4);
-            console.log('S3 = ' + S3);
-            console.log('S2 = ' + S2);
-        }
+        if (S7 != check(S8, S7)[1]) {S7 = check(S8, S7)[1];}
+        if (S6 != check(S7, S6)[1]) {S6 = check(S7, S6)[1];}
+        if (S5 != check(S6, S5)[1]) {S5 = check(S6, S5)[1];}
+        if (S4 != check(S5, S4)[1]) {S4 = check(S5, S4)[1];}
+        console.log('S8 = ' + S8);
+        console.log('S7 = ' + S7);
+        console.log('S6 = ' + S6);
+        console.log('S5 = ' + S5);
+        console.log('S4 = ' + S4);
+        console.log('S3 = ' + S3);
+        console.log('S2 = ' + S2);
     }
 
     // определение ординаты светофора 9
