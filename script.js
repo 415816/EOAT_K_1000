@@ -908,30 +908,30 @@ function calcBU() {
 
             if(S9 != check(S10, S9)[1]) {
                 S9 = check(S10, S9)[1];
-                console.log('S9 = ' + S9);
             }
             if(S8 != check(S9, S8)[1]) {
                 S8 = check(S9, S8)[1];
-                console.log('S8 = ' + S8);
             }
             if(S7 != check(S8, S7)[1]) {
                 S7 = check(S8, S7)[1];
-                console.log('S7 = ' + S7);
             }
             if(S6 != check(S7, S6)[1]) {
                 S6 = check(S7, S6)[1];
-                console.log('S6 = ' + S6);
             }
             if(S5 != check(S6, S5)[1]) {
                 S5 = check(S6, S5)[1];
-                console.log('S5 = ' + S5);
             }
             if (S4 != check(S5, S4)[1]) {
                 S4 = check(S5, S4)[1];
-                console.log('S4 = ' + S4);
-                console.log('S3 = ' + S3);
-                console.log('S2 = ' + S2);
             }
+            console.log('S9 = ' + S9);
+            console.log('S8 = ' + S8);
+            console.log('S7 = ' + S7);
+            console.log('S6 = ' + S6);
+            console.log('S5 = ' + S5);
+            console.log('S4 = ' + S4);
+            console.log('S3 = ' + S3);
+            console.log('S2 = ' + S2);
         }
     }
 
