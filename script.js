@@ -634,23 +634,27 @@ const srchInArr = function searchInArray(array, n) {
 let lzu, Iz;
 // исходные данные
 let lzuv = document.querySelector('.lzu');
-//let Izv = document.querySelector('.Iz');
-
-document.querySelector('.pullData').onclick = () => {
-    lzu = Lzu[lzuv.value[0]];
-    Iz = Izv[lzuv.value[1]];
-}
 
 let Ir;
 let S2 = 8000, S3, S4, S5, S6, S7, S8, S9, S10;
-let Szu2, Szu3, Szu4, Szu5, Szu6, Szu7, Szu8, Szu9, Szu10;
-let Thzu2, Thzu3, Thzu4, Thzu5, Thzu6, Thzu7, Thzu8, Thzu9, Thzu10;
-let Tg2, Tg3, Tg4, Tg5, Tg6, Tg7, Tg8, Tg9, Tg10;
+let Szu5, Szu6, Szu7, Szu8, Szu9;
+let Thzu5, Thzu6, Thzu7, Thzu8, Thzu9;
+let Tg2, Tg3, Tg4, Tg5, Tg6;
 
-calculat.onclick = calcBU;
-/* calculat.onclick = () => {
-        console.log(parseFloat(Iz.value));
-        calcBU(parseFloat(Iz.value, lzu.value));} */
+calculat.onclick = () => {
+    lzu = Lzu[lzuv.value[0]];
+    Iz = Izv[lzuv.value[1]];
+    calcBU();
+}
+
+lzuv.addEventListener('keydown', function(e) {
+    if (e.keyCode === 13) {
+        lzu = Lzu[lzuv.value[0]];
+        Iz = Izv[lzuv.value[1]];
+        calcBU();
+    }
+})
+
 
 // функция определения ординаты светофоров одинаковой серии
 function identicalSeries(Sg1, Iz) {
@@ -715,6 +719,7 @@ function calcBU() {
     console.log(Iz);
     console.log(Ir);
     // определение ординаты светофора 5
+    console.log('ОПРЕДЕЛЕНИЕ ОРДИНАТЫ СВЕТОФОРА 5')
     Tg2 = identicalSeries(S2, Iz)[0];
     Thzu5 = identicalSeries(S2, Iz)[1];
     Szu5 = identicalSeries(S2, Iz)[2];
@@ -725,6 +730,7 @@ function calcBU() {
     console.log('S5 = ' + S5);
 
     // определение ординаты светофора 3 (для случая, когда расстояние между 2 и 5 меньше 3000м)
+    console.log('ОПРЕДЕЛЕНИЕ ОРДИНАТЫ СВЕТОФОРА 3 (ДЛЯ СЛУЧАЯ, КОГДА РАССТОЯНИЕ МЕЖДУ 2 и 5 МЕНЬШЕ 3000м)')
     if (S5 - S2 < 3000) {
         S4 = +S5;
         S5 = 0;
@@ -747,6 +753,7 @@ function calcBU() {
 
         // определение ординат светофоров 3 и 4 (для случая, когда расстояние между 2 и 5 больше 3000м)
     } else {
+        console.log('ОПРЕДЕЛЕНИЕ ОРДИНАТ СВЕТОФОРОВ 3 и 4 (ДЛЯ СЛУЧАЯ, КОГДА РАССТОЯНИЕ МЕЖДУ 2 и 5 БОЛЬШЕ 3000м)')
         Tc2 = defferentSeries3(S2, S5)[0];
         Tc3 = defferentSeries3(S2, S5)[1];
         Tc4 = defferentSeries3(S2, S5)[2];
@@ -765,6 +772,7 @@ function calcBU() {
     }
 
     // определение ординаты светофора 6
+    console.log('ОПРЕДЕЛЕНИЕ ОРДИНАТЫ СВЕТОФОРА 6')
     if (S6 != 17125 && S7 != 17125 && S8 != 17125) {
         Tg3 = identicalSeries(S3, Iz)[0];
         Thzu6 = identicalSeries(S3, Iz)[1];
@@ -809,6 +817,7 @@ function calcBU() {
     }
 
     // определение ординаты светофора 5 (для случая, когда расстояние между 2 и 5 было меньше 3000м)
+    console.log('ОПРЕДЕЛЕНИЕ ОРДИНАТЫ СВЕТОФОРА 5 (ДЛЯ СЛУЧАЯ, КОГДА РАССТОЯНИЕ МЕЖДУ 2 и 5 БЫЛО МЕНЬШЕ 3000м)')
     if (S5 == 0) {
         Tc4 = defferentSeries2(S4, S6)[0];
         Tc6 = defferentSeries2(S4, S6)[1];
@@ -823,6 +832,7 @@ function calcBU() {
     }
 
     // определение ординаты светофора 7
+    console.log('ОПРЕДЕЛЕНИЕ ОРДИНАТЫ СВЕТОФОРА 7')
     if (S6 != 17125 && S7 != 17125 && S8 != 17125) {
         Tg4 = identicalSeries(S4, Iz)[0];
         Thzu7 = identicalSeries(S4, Iz)[1];
@@ -853,6 +863,7 @@ function calcBU() {
     }
 
     // определение ординаты светофора 8
+    console.log('ОПРЕДЕЛЕНИЕ ОРДИНАТЫ СВЕТОФОРА 8');
     if (S7 != 17125 && S8 != 17125) {
         Tg5 = identicalSeries(S5, Iz)[0];
         Thzu8 = identicalSeries(S5, Iz)[1];
@@ -889,6 +900,7 @@ function calcBU() {
     }
 
     // определение ординаты светофора 9
+    console.log('ОПРЕДЕЛЕНИЕ ОРДИНАТЫ СВЕТОФОРА 9');
     if (S7 != 17125 && S8 != 17125 && S9 != 17125) {
         Tg6 = identicalSeries(S6, Iz)[0];
         Thzu9 = identicalSeries(S6, Iz)[1];
@@ -961,6 +973,5 @@ function calcBU() {
             console.log('S2 = ' + S2);
         }
     }
-
 }
     
